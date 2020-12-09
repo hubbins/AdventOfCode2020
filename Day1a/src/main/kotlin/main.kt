@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
 fun getData(fileName: String): HashSet<Int> {
     val inputSet = HashSet<Int>()
 
-    File(ClassLoader.getSystemResource("input.txt").file)
+    File(ClassLoader.getSystemResource(fileName).file)
         .readLines()
         .forEach {
             if (it.trim().length > 0) {
