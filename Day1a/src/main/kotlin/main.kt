@@ -16,11 +16,8 @@ fun getData(fileName: String): HashSet<Int> {
 
     File(ClassLoader.getSystemResource(fileName).file)
         .readLines()
-        .forEach {
-            if (it.trim().length > 0) {
-                inputSet.add(it.toInt())
-            }
-        }
+        .filter { it.isNotBlank() }
+        .forEach { inputSet.add(it.toInt()) }
 
     return inputSet
 }
